@@ -36,6 +36,7 @@ def get_db_session():
         yield session
 
 
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request, session: Session = Depends(get_db_session)):
     logger.info("root called")
